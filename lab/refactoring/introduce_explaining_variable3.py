@@ -5,8 +5,16 @@ MEDIUM = 600000
 COOKED_CONSTANT = 0.05
 
 def is_cookeding_criteria_satisfied(time, temperature, pressure, desired_state):
-    if desired_state == 'well-done' and time * temperature * pressure * COOKED_CONSTANT >= WELL_DONE: 
+    if desired_state == food_state():
         return True
-    if desired_state == 'medium' and time * temperature * pressure * COOKED_CONSTANT >= MEDIUM:
-        return True
-    return False
+    else:
+        return False
+
+def food_state(time, temperature, pressure):
+    factors = time * temperature * pressure * COOKED_CONSTANT
+    if factors >= WELL_DONE:
+        return "well-done"
+    elif factors >= MEDIUM:
+        return "medium"
+    else:
+        return "State not tracked"
