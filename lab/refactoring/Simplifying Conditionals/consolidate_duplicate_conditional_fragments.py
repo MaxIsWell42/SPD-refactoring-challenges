@@ -13,7 +13,7 @@ def make_drink(drink, addons):
         mix = []
         mix = add(mix, 'coffee')
         mix = add(mix, addons)
-    if 'strawberry milkshake' in drink:
+    elif 'strawberry milkshake' in drink:
         mix = []
         mix = mixer_ice_with_cream()
         mix = add(mix, 'strawberry')

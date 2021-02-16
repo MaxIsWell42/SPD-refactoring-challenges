@@ -1,25 +1,21 @@
 # By Kamran Bigdely
 # Extract superclass
-class AngryMushroom:
-    
+class Enemy:
     def __init__(self):
-        self.health = 100
-        
+        self.health = 100   
+
     def take_damage(self, damage):
         self.health -= damage
-        
+
+
+class AngryMushroom(Enemy):     
     def spread_poison(self):
         print('spreading poison!')
 
 
-class AngryBot:
-    
+class AngryBot(Enemy):
     def __init__(self):
-        self.health = 100
         self.n_bullets = 40
-        
-    def take_damage(self, damage):
-        self.health -= damage
         
     def punch_iron_fist(self):
         print("punching with iron fist!")
@@ -30,14 +26,7 @@ class AngryBot:
 
 
 
-class AggressiveAlligator:
-    
-    def __init__(self):
-        self.health = 100
-        
-    def take_damage(self, damage):
-        self.health -= damage
-        
+class AggressiveAlligator(Enemy):   
     def bite(self):
         print('biting!')
 

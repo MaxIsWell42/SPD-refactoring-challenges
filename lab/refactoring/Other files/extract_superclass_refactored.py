@@ -5,7 +5,7 @@ class Enemy:
     
     def __init__(self):
         self.health = 100   
-         
+
     def take_damage(self, damage):
         self.health -= damage
 
