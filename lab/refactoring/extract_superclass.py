@@ -30,7 +30,7 @@ class AngryBot:
 
 
 
-class AgressiveAlligator:
+class AggressiveAlligator:
     
     def __init__(self):
         self.health = 100
@@ -39,7 +39,7 @@ class AgressiveAlligator:
         self.health -= damage
         
     def bite(self):
-        print('bitting!')
+        print('biting!')
 
 
 angryMushroom = AngryMushroom()
