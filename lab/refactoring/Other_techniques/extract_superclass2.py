@@ -1,35 +1,38 @@
 # by Kami Bigdely
 # Extract superclass.
 class Shape:
-    def __init__(self, pointX, pointY, visible = True):
-        self.pointX = pointX
-        self.pointY = pointY
+    def __init__(self, visible = True):
+        self.visible = visible
     
     def display(self):
-        if self.visible == True:
-            print('Drew the shape')
-
-class Circle:
+        if self.visible:
+            return True
+        return False
     
+    def hide(self):
+        self.visible = False
+    
+    def set_visible(self):
+        self.visible = True
+
+class Circle(shape):
     def __init__(self, x, y, r, visible = True):
+        Shape.__init__(self, visible)
         self.center_x = x
         self.center_y = y
         self.r = r
         self.visible = visible
         
     def display(self):
-        print('drew the circle.')
-        
-    def set_visible(self,is_visible):
-        self.visible = is_visible
+        if Shape.display(self):
+            print('drew the circle.')
         
     def get_center(self):
         return self.center_x, self.center_y
     
-    
 class Rectangle:
-    
     def __init__(self, x, y, width, height, visible = True):
+        Shape.__init__(self.visible)
         # left-bottom corner.
         self.x = x
         self.y = y
@@ -38,24 +41,17 @@ class Rectangle:
         self.visible = visible
         
     def display(self):
-        if self.visible:
-            print('drew the rectable.')
+        if Shape.display(self):
+            print('Drew the rectangle.')
             
-    def hide(self):
-        self.visible = False
-        
-    def make_visible(self):
-        self.visible = True
-        
     def get_center(self):
         return self.x + self.width/2, \
                 self.y + self.height/2 
 
 
-
 if __name__ == "__main__":
     circle = Circle(0,0,10, False)
-    circle.set_visible(True)
+    circle.set_visible()
     circle.display()
     print('center point',circle.get_center())
 
