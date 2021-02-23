@@ -7,6 +7,12 @@ class Gun:
         print('shoot')
     def reload(self):
         print('reload')
+    def fire_once(self):
+        for i, gun in enumerate(self.guns):
+            if self.num_cathridge_bullets[i] > 0:
+                gun.shoot()
+                self.num_cathridge_bullets[i] -= 1
+                break
 
 class Player:
     def __init__(self, guns):        
@@ -16,12 +22,6 @@ class Player:
         for _ in range(len(guns)):
             # initialize with 10 bullets in each gun's cathridge.
             self.num_cathridge_bullets.append(10) 
-    def fire_once(self):
-        for i, gun in enumerate(self.guns):
-            if self.num_cathridge_bullets[i] > 0:
-                gun.shoot()
-                self.num_cathridge_bullets[i] -= 1
-                break
             
 def game_loop():
     while (True):

@@ -4,8 +4,12 @@ first_names = ['elizabeth', 'Jim']
 last_names = ['debicki', 'Carrey']
 birth_year = [1990, 1962]
 movies = [['Tenet', 'Vita & Virgina', 'Guardians of the Galexy', 'The Great Gatsby'],\
-     ['Ace Ventura', 'The Mask', 'Dubm and Dumber', 'The Truman Show', 'Yes Man']]
+    ['Ace Ventura', 'The Mask', 'Dubm and Dumber', 'The Truman Show', 'Yes Man']]
 emails = ['deb@makeschool.com', 'jim@makeschool.com']
+
+class Info:
+    
+
 
 def send_hiring_email(email):
     print("email sent to: ", email)

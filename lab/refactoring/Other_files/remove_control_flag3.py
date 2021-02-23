@@ -4,12 +4,9 @@
 
 def backdoor_srcmethod():
     running = True
-    while running:
+    while inputfile != '':
         print( "Puts the Android Agent inside an Android App APK. The application runs normally, with extra functionality.")
         inputfile = input('APK to Backdoor: ').strip()
-        if inputfile == '':
-            running = False
-        else:
-            print('doing other stuff.') 
+        print('doing other stuff.')
 
 backdoor_srcmethod()

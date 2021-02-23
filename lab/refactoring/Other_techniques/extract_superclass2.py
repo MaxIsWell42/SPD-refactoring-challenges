@@ -1,13 +1,22 @@
 # by Kami Bigdely
 # Extract superclass.
+class Shape:
+    def __init__(self, pointX, pointY, visible = True):
+        self.pointX = pointX
+        self.pointY = pointY
+    
+    def display(self):
+        if self.visible == True:
+            print('Drew the shape')
+
 class Circle:
     
     def __init__(self, x, y, r, visible = True):
-      self.center_x = x
-      self.center_y = y
-      self.r = r
-      self.visible = visible
-      
+        self.center_x = x
+        self.center_y = y
+        self.r = r
+        self.visible = visible
+        
     def display(self):
         print('drew the circle.')
         
@@ -40,7 +49,7 @@ class Rectangle:
         
     def get_center(self):
         return self.x + self.width/2, \
-               self.y + self.height/2 
+                self.y + self.height/2 
 
 
 

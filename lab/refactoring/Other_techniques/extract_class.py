@@ -1,5 +1,26 @@
 # by Kami Bigdely
 # Extract Class
+from pprint import pprint
+
+class Food:
+    # name = name 
+    # preptime = 0
+    # vege = False
+    # foodtype = foodtype
+    # origin = origin
+    # ingredients = []
+    # instructions = instructions
+    
+    def __init__(self, name, info):
+        self.name = name
+        self.preptime = info[0]
+        self.vege = info[1]
+        self.foodtype = info[2]
+        self.origin = info[3]
+        self.ingredients = info[4]
+        self.instructions = info[5]
+        
+
 foods = {'butternut squash soup':[45, True, 'soup','North African',\
      ['butter squash','onion','carrot', 'garlic','butter','black pepper', 'cinnamon','coconut milk']\
         ,'1. Grill the butter squash, onion, carrot and garlic in the oven until'
@@ -16,17 +37,26 @@ foods = {'butternut squash soup':[45, True, 'soup','North African',\
                 'seasoning 3. Add all the content to a sausage stuffer. Put the casing on'
                 "the stuffer funnel. Rotate the stuffer's handle (or turn it on) to make your yummy sausages!"]}
 
-for key, value in foods.items():
-    print("Name:",key)
-    print("Prep time:",value[0], "mins")
-    print("Is Veggie?", 'Yes' if value[1] else "No")
-    print("Food Type:", value[2])
-    print("Cuisine:", value[3])
-    for item in value[4]:
-        print(item, end=', ')
-    print()
-    print("recipe", value[5])
-    print("***")
+# for key, value in foods.items():
+#     print("Name:",key)
+#     print("Prep time:",value[0], "mins")
+#     print("Is Veggie?", 'Yes' if value[1] else "No")
+#     print("Food Type:", value[2])
+#     print("Cuisine:", value[3])
+#     for item in value[4]:
+#         print(item, end=', ')
+#     print()
+#     print("recipe", value[5])
+#     print("***")
+
+def setRecipes(foods):
+    recipeBook = []
+    for k, v in foods:
+        entry = Food(k, v)
+        recipeBook.append(entry)
+    return recipeBook
 
 
+def printAll(food):
+    pprint(vars(food))
 
